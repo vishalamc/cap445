@@ -1,0 +1,77 @@
+#include <iostream>
+#include<windows.h>
+
+using namespace std;
+class Movie
+{
+        public:
+            int movieTickets;
+            string popCorn;
+            string coldDrink;
+            string movieName;
+            Movie()
+            {
+                movieName="3Idiots";
+            }
+            void askTicket(int no)
+            {
+                movieTickets=no;
+            }
+            void askTicket(int no,string popcorn)
+            {
+                movieTickets=no;
+                popCorn=popcorn;
+            }
+            void askTicket(int no,string popcorn,string colddrink)
+            {
+                movieTickets=no;
+                popCorn=popcorn;
+                coldDrink=colddrink;
+            }
+            void getTicket()
+            {
+                cout<<"Movie Name:"<<movieName<<endl;
+                cout<<"Total Tickets:"<<movieTickets<<endl;
+                cout<<"POP Corn:"<<popCorn<<endl;
+                cout<<"Cold Drink:"<<coldDrink<<endl;
+            }
+
+};
+int main()
+{
+   system("Color 4F");
+    int ch=1;
+    int ticket;
+    Movie m;
+    cout<<"Welcome to Big Cinema"<<endl;
+    do{
+        cout<<"Select choice"<<endl;
+        cout<<"1.Movie Tickets \n2.Tickets with popcorn \n3.Tickets with popcorn and cold drink \n4.Exit"<<endl;
+        cin>>ch;
+
+        switch(ch)
+        {
+                case 1:cout<<"How many tickets you want"<<endl;
+                       cin>>ticket;
+                        m.askTicket(ticket);
+                        m.getTicket();
+                        break;
+                case 2: cout<<"How many tickets you want"<<endl;
+                        cin>>ticket;
+                        m.askTicket(ticket,"Yes");
+                        m.getTicket();
+                        break;
+                case 3: cout<<"How many tickets you want"<<endl;
+                        cin>>ticket;
+                        m.askTicket(ticket,"Yes","Yes");
+                        m.getTicket();
+                        break;
+                default:cout<<"Welcome"<<endl;
+                        exit(0);
+
+        }
+
+    }while(ch!=0);
+
+    return 0;
+}

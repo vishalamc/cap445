@@ -1,0 +1,42 @@
+
+#include <iostream>
+
+using namespace std;
+class complex
+{
+public:
+
+    int real;
+    int img;
+    complex()
+    {
+        real=0;
+        img=0;
+    }
+    complex(int r, int i)
+    {
+        real=r;
+        img=i;
+    }
+    void getComplex()
+    {
+        cout<<real<<"+"<<img<<"i";
+    }
+  complex operator +(complex c)
+    {
+        complex t;
+        t.real=real+c.real;
+        t.img=img+c.img;
+        return t;
+
+    }
+
+};
+int main()
+{
+complex c1(2,3),c2(4,5),c3;
+
+ c3=c1+c2;
+ c3.getComplex();
+ return 0;
+}
